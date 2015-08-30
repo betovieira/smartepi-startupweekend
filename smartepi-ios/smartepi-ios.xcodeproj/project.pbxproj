@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB15E8B41B9235CC005AA85C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15E8B31B9235CC005AA85C /* AppDelegate.swift */; };
+		DB15E8B61B9235CC005AA85C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15E8B51B9235CC005AA85C /* ViewController.swift */; };
+		DB15E8B91B9235CC005AA85C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB15E8B71B9235CC005AA85C /* Main.storyboard */; };
+		DB15E8BB1B9235CC005AA85C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB15E8BA1B9235CC005AA85C /* Images.xcassets */; };
+		DB15E8BE1B9235CC005AA85C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB15E8BC1B9235CC005AA85C /* LaunchScreen.xib */; };
+		DB15E8CA1B9235CC005AA85C /* smartepi_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15E8C91B9235CC005AA85C /* smartepi_iosTests.swift */; };
+		DB15E8D51B923675005AA85C /* Wearable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15E8D31B923675005AA85C /* Wearable.swift */; };
+		DB15E8D61B923675005AA85C /* WearableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15E8D41B923675005AA85C /* WearableService.swift */; };
+		DB15E8D91B9236DA005AA85C /* MainCara.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB15E8D71B9236DA005AA85C /* MainCara.storyboard */; };
+		DB15E8DB1B923BF1005AA85C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB15E8DA1B923BF1005AA85C /* Settings.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB15E8C41B9235CC005AA85C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB15E8A61B9235CC005AA85C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB15E8AD1B9235CC005AA85C;
+			remoteInfo = "smartepi-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB15E8AE1B9235CC005AA85C /* smartepi-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smartepi-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB15E8B21B9235CC005AA85C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB15E8B31B9235CC005AA85C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB15E8B51B9235CC005AA85C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB15E8B81B9235CC005AA85C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB15E8BA1B9235CC005AA85C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB15E8BD1B9235CC005AA85C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DB15E8C31B9235CC005AA85C /* smartepi-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "smartepi-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB15E8C81B9235CC005AA85C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB15E8C91B9235CC005AA85C /* smartepi_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartepi_iosTests.swift; sourceTree = "<group>"; };
+		DB15E8D31B923675005AA85C /* Wearable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wearable.swift; sourceTree = "<group>"; };
+		DB15E8D41B923675005AA85C /* WearableService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WearableService.swift; sourceTree = "<group>"; };
+		DB15E8D81B9236DA005AA85C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainCara.storyboard; sourceTree = "<group>"; };
+		DB15E8DA1B923BF1005AA85C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB15E8AB1B9235CC005AA85C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB15E8C01B9235CC005AA85C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB15E8A51B9235CC005AA85C = {
+			isa = PBXGroup;
+			children = (
+				DB15E8B01B9235CC005AA85C /* smartepi-ios */,
+				DB15E8C61B9235CC005AA85C /* smartepi-iosTests */,
+				DB15E8AF1B9235CC005AA85C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB15E8AF1B9235CC005AA85C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB15E8AE1B9235CC005AA85C /* smartepi-ios.app */,
+				DB15E8C31B9235CC005AA85C /* smartepi-iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB15E8B01B9235CC005AA85C /* smartepi-ios */ = {
+			isa = PBXGroup;
+			children = (
+				DB15E8B31B9235CC005AA85C /* AppDelegate.swift */,
+				DB15E8B51B9235CC005AA85C /* ViewController.swift */,
+				DB15E8B71B9235CC005AA85C /* Main.storyboard */,
+				DB15E8D71B9236DA005AA85C /* MainCara.storyboard */,
+				DB15E8D31B923675005AA85C /* Wearable.swift */,
+				DB15E8D41B923675005AA85C /* WearableService.swift */,
+				DB15E8BA1B9235CC005AA85C /* Images.xcassets */,
+				DB15E8BC1B9235CC005AA85C /* LaunchScreen.xib */,
+				DB15E8DA1B923BF1005AA85C /* Settings.bundle */,
+				DB15E8B11B9235CC005AA85C /* Supporting Files */,
+			);
+			path = "smartepi-ios";
+			sourceTree = "<group>";
+		};
+		DB15E8B11B9235CC005AA85C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB15E8B21B9235CC005AA85C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB15E8C61B9235CC005AA85C /* smartepi-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB15E8C91B9235CC005AA85C /* smartepi_iosTests.swift */,
+				DB15E8C71B9235CC005AA85C /* Supporting Files */,
+			);
+			path = "smartepi-iosTests";
+			sourceTree = "<group>";
+		};
+		DB15E8C71B9235CC005AA85C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB15E8C81B9235CC005AA85C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB15E8AD1B9235CC005AA85C /* smartepi-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB15E8CD1B9235CC005AA85C /* Build configuration list for PBXNativeTarget "smartepi-ios" */;
+			buildPhases = (
+				DB15E8AA1B9235CC005AA85C /* Sources */,
+				DB15E8AB1B9235CC005AA85C /* Frameworks */,
+				DB15E8AC1B9235CC005AA85C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "smartepi-ios";
+			productName = "smartepi-ios";
+			productReference = DB15E8AE1B9235CC005AA85C /* smartepi-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB15E8C21B9235CC005AA85C /* smartepi-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB15E8D01B9235CC005AA85C /* Build configuration list for PBXNativeTarget "smartepi-iosTests" */;
+			buildPhases = (
+				DB15E8BF1B9235CC005AA85C /* Sources */,
+				DB15E8C01B9235CC005AA85C /* Frameworks */,
+				DB15E8C11B9235CC005AA85C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB15E8C51B9235CC005AA85C /* PBXTargetDependency */,
+			);
+			name = "smartepi-iosTests";
+			productName = "smartepi-iosTests";
+			productReference = DB15E8C31B9235CC005AA85C /* smartepi-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB15E8A61B9235CC005AA85C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Humberto Vieira de Castro";
+				TargetAttributes = {
+					DB15E8AD1B9235CC005AA85C = {
+						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					DB15E8C21B9235CC005AA85C = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = DB15E8AD1B9235CC005AA85C;
+					};
+				};
+			};
+			buildConfigurationList = DB15E8A91B9235CC005AA85C /* Build configuration list for PBXProject "smartepi-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB15E8A51B9235CC005AA85C;
+			productRefGroup = DB15E8AF1B9235CC005AA85C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB15E8AD1B9235CC005AA85C /* smartepi-ios */,
+				DB15E8C21B9235CC005AA85C /* smartepi-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB15E8AC1B9235CC005AA85C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB15E8B91B9235CC005AA85C /* Main.storyboard in Resources */,
+				DB15E8BE1B9235CC005AA85C /* LaunchScreen.xib in Resources */,
+				DB15E8DB1B923BF1005AA85C /* Settings.bundle in Resources */,
+				DB15E8D91B9236DA005AA85C /* MainCara.storyboard in Resources */,
+				DB15E8BB1B9235CC005AA85C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB15E8C11B9235CC005AA85C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB15E8AA1B9235CC005AA85C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB15E8D61B923675005AA85C /* WearableService.swift in Sources */,
+				DB15E8B61B9235CC005AA85C /* ViewController.swift in Sources */,
+				DB15E8D51B923675005AA85C /* Wearable.swift in Sources */,
+				DB15E8B41B9235CC005AA85C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB15E8BF1B9235CC005AA85C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB15E8CA1B9235CC005AA85C /* smartepi_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB15E8C51B9235CC005AA85C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB15E8AD1B9235CC005AA85C /* smartepi-ios */;
+			targetProxy = DB15E8C41B9235CC005AA85C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB15E8B71B9235CC005AA85C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB15E8B81B9235CC005AA85C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB15E8BC1B9235CC005AA85C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB15E8BD1B9235CC005AA85C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		DB15E8D71B9236DA005AA85C /* MainCara.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB15E8D81B9236DA005AA85C /* Base */,
+			);
+			name = MainCara.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB15E8CB1B9235CC005AA85C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB15E8CC1B9235CC005AA85C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB15E8CE1B9235CC005AA85C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "smartepi-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB15E8CF1B9235CC005AA85C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "smartepi-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB15E8D11B9235CC005AA85C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "smartepi-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/smartepi-ios.app/smartepi-ios";
+			};
+			name = Debug;
+		};
+		DB15E8D21B9235CC005AA85C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "smartepi-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/smartepi-ios.app/smartepi-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB15E8A91B9235CC005AA85C /* Build configuration list for PBXProject "smartepi-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB15E8CB1B9235CC005AA85C /* Debug */,
+				DB15E8CC1B9235CC005AA85C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB15E8CD1B9235CC005AA85C /* Build configuration list for PBXNativeTarget "smartepi-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB15E8CE1B9235CC005AA85C /* Debug */,
+				DB15E8CF1B9235CC005AA85C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB15E8D01B9235CC005AA85C /* Build configuration list for PBXNativeTarget "smartepi-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB15E8D11B9235CC005AA85C /* Debug */,
+				DB15E8D21B9235CC005AA85C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB15E8A61B9235CC005AA85C /* Project object */;
+}
