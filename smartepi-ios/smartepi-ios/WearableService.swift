@@ -99,15 +99,21 @@ class WearableService: NSObject, CBPeripheralDelegate {
         var value = NSString(bytes: characteristic.value.bytes, length: characteristic.value.length, encoding: NSUTF8StringEncoding)
         value = value?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
-        println()
         if let optionalValue = value {
             self.sendWearableCharacteristicNewValue(optionalValue)
         }
         
+        //let ret = NSString(data:characteristic!.value!, encoding:NSUTF8StringEncoding) as! String
         
-        let ret = NSString(data:characteristic!.value!, encoding:NSUTF8StringEncoding) as! String
+        println("Retorno - \(value!)")
         
-        println("Retorno - \(ret)")
+        /*
+            Temperatura = #TE + temperatura em float
+            Luminosidade = #LI + luminosidade em int
+            Acelerômetro = #AX + acelerometro em X
+                            #AY + acelerometro em Y
+                            #AZ + acelerometro em Z
+        */
         
         
         

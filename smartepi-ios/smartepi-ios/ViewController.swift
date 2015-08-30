@@ -11,17 +11,15 @@ import CoreBluetooth
 
 class ViewController: UIViewController {
 
-    // IB Outlets
-    @IBOutlet weak var accelerometrX: UILabel!
-    @IBOutlet weak var accelerometrY: UILabel!
-    @IBOutlet weak var accelerometrZ: UILabel!
-    @IBOutlet weak var luminosityValue: UILabel!
-    @IBOutlet weak var temperatureValue: UILabel!
+
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
+
+    @IBOutlet var imageViewStatus: UIImageView!
+    @IBOutlet var labelEstado: UIButton!
+    var jaNotificou: Bool?
+    var ledLigadoColor: Bool?
+    
     
     let blueColor = UIColor(red: 51/255, green: 73/255, blue: 96/255, alpha: 1.0)
     var timer: NSTimer?
@@ -37,13 +35,14 @@ class ViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("characteristicNewValue:"),
             name: WearableCharacteristicNewValue, object: nil)
         
+        jaNotificou = false
+        ledLigadoColor = true
+        
+        
+        NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("limpaNotificacoes"), userInfo: nil, repeats: true)
+        
         //Wearable instance
         wearable
-        
-        
-        
-        
-        
         
     }
     
@@ -62,36 +61,65 @@ class ViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             switch sensor {
                 case "#TE":
-                    self.temperatureValue.text = "\(val)º"
+                    //self.temperatureValue.text = "\(val)º"
                     break
             
                 case "#LI":
-                    self.luminosityValue.text = val
+                    //self.luminosityValue.text = val
+                    // 22 - NORMAL
+                    // 13 - DESLIGADO
                     
-                    if val.toInt() > 100 {
+                    if val.toInt() == 22 {
                         
-                        UIApplication.sharedApplication().cancelAllLocalNotifications()
+//                        if self.ledLigadoColor == false {
+                            self.labelEstado.tintColor = UIColor.blueColor()
+                            println("LIGADO")
+                            if let wearableService = wearable.wearableService {
+                                self.limpaTudo()
+                                wearableService.sendCommand(String(format:"#LR0000\n\r"))
+
+                                wearableService.sendCommand(String(format:"#LB0255\n\r"))
+                                self.ledLigadoColor = true
+                                self.imageViewStatus.image = UIImage(named: "ligado")
+                                self.contentView.backgroundColor = UIColor.blueColor()
+
+                            }
                         
-                        var localNotification: UILocalNotification = UILocalNotification()
-                        localNotification.alertAction = "Luminosidade Alta"
-                        localNotification.alertBody = "Luminosidade Alta"
-                        localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
-                        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+//                        }
+                        
+                        
+                    } else if val.toInt() == 13 {
+                        
+//                        if self.ledLigadoColor == true {
+                            self.labelEstado.tintColor = UIColor.redColor()
+                            
+                            println("DESLIGADO")
+                            if let wearableService = wearable.wearableService {
+                                self.limpaTudo()
+                                
+                                wearableService.sendCommand(String(format:"#LR0255\n\r"))
+                                self.mandaNotification()
+                                self.imageViewStatus.image = UIImage(named: "desligado")
+                                self.contentView.backgroundColor = UIColor.redColor()
+
+
+//                            self.ledLigadoColor = false
+                            }
                         
                     }
                     
                     break
             
                 case "#AX":
-                    self.accelerometrX.text = val
+                    //self.accelerometrX.text = val
                     break
             
                 case "#AY":
-                    self.accelerometrY.text = val
+                    //self.accelerometrY.text = val
                     break
             
                 case "#AZ":
-                    self.accelerometrZ.text = val
+                    //self.accelerometrZ.text = val
                     break
             
                 default:
@@ -103,6 +131,23 @@ class ViewController: UIViewController {
         }
     }
     
+    func limpaNotificacoes() {
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        jaNotificou = false
+    }
+    
+    func mandaNotification() {
+    
+        if (jaNotificou == false) {
+        
+            var localNotification: UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "Capacete Desconectado"
+            localNotification.alertBody = "Funcionário JOBSON está sem capacete!"
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            jaNotificou = true
+        }
+    }
     
     // MARK: - On connection change
     func connectionChanged(notification: NSNotification) {
@@ -174,7 +219,7 @@ class ViewController: UIViewController {
     // MARK: - Slider change
     @IBAction func sliderChange(slider: UISlider) {
         if let wearableService = wearable.wearableService {
-            if (slider.isEqual(redSlider)) {
+            /*if (slider.isEqual(redSlider)) {
                 wearableService.sendCommand(String(format: "#LR0%.0f\n\r", slider.value))
                 println("RED - \(redSlider.value), \(greenSlider.value), \(blueSlider.value) ")
             }
@@ -188,19 +233,19 @@ class ViewController: UIViewController {
             if (slider.isEqual(blueSlider)) {
                 wearableService.sendCommand(String(format: "#LB0%.0f\n\r", slider.value))
                 println("BLUE  - \(redSlider.value), \(greenSlider.value), \(blueSlider.value) ")
-            }
+            }*/
         }
     }
     
     @IBAction func click_Red(sender: AnyObject) {
         limpaTudo()
-        wearable.wearableService!.sendCommand("#LR0255\n")
+        //wearable.wearableService!.sendCommand("#LR0255\n")
     }
     
     @IBAction func click_Blue(sender: AnyObject) {
         limpaTudo()
 
-        wearable.wearableService!.sendCommand(String(format: "#LB0255\n"))
+        //wearable.wearableService!.sendCommand(String(format: "#LB0255\n"))
 
         
         
@@ -208,14 +253,15 @@ class ViewController: UIViewController {
     @IBAction func click_Green(sender: AnyObject) {
         limpaTudo()
 
-        wearable.wearableService!.sendCommand(String(format: "#LG0255\n"))
+        //wearable.wearableService!.sendCommand(String(format: "#LG0255\n"))
         
     }
     
     func limpaTudo() {
-        wearable.wearableService!.sendCommand("#LR0000\n")
-        wearable.wearableService!.sendCommand("#LG0000\n")
-        wearable.wearableService!.sendCommand("#LB0000\n")
+        if let wearableService = wearable.wearableService {
+            wearableService.sendCommand(String(format:"#LR0000\n\r"))
+            wearableService.sendCommand(String(format:"#LB0000\n\r"))
+        }
     }
     
     
@@ -224,9 +270,9 @@ class ViewController: UIViewController {
         if let wearableService = wearable.wearableService {
             wearableService.sendCommand("#LL0000\n\r")
             
-            redSlider.setValue(0, animated: true)
-            greenSlider.setValue(0, animated: true)
-            blueSlider.setValue(0, animated: true)
+//            redSlider.setValue(0, animated: true)
+//            greenSlider.setValue(0, animated: true)
+//            blueSlider.setValue(0, animated: true)
         }
     }
     
@@ -235,7 +281,7 @@ class ViewController: UIViewController {
     func getSensorValues() {
         if let wearableService = wearable.wearableService {
             wearableService.sendCommand("#TE0000\n\r")
-             wearableService.sendCommand("#LI0000\n\r")
+            wearableService.sendCommand("#LI0000\n\r")
             wearableService.sendCommand("#AC0003\n\r")
         }
     }
