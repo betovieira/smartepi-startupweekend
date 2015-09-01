@@ -101,11 +101,12 @@ class WearableService: NSObject, CBPeripheralDelegate {
         
         if let optionalValue = value {
             self.sendWearableCharacteristicNewValue(optionalValue)
+            println("Retorno - \(value!)")
+            
         }
         
         //let ret = NSString(data:characteristic!.value!, encoding:NSUTF8StringEncoding) as! String
         
-        println("Retorno - \(value!)")
         
         /*
             Temperatura = #TE + temperatura em float

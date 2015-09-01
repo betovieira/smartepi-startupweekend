@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
 
+    @IBOutlet var labelStatusFuncionario: UILabel!
     @IBOutlet var imageViewStatus: UIImageView!
     @IBOutlet var labelEstado: UIButton!
     var jaNotificou: Bool?
@@ -71,7 +72,7 @@ class ViewController: UIViewController {
                     
                     if val.toInt() == 22 {
                         
-//                        if self.ledLigadoColor == false {
+                        if self.ledLigadoColor == false {
                             self.labelEstado.tintColor = UIColor.blueColor()
                             println("LIGADO")
                             if let wearableService = wearable.wearableService {
@@ -82,15 +83,19 @@ class ViewController: UIViewController {
                                 self.ledLigadoColor = true
                                 self.imageViewStatus.image = UIImage(named: "ligado")
                                 self.contentView.backgroundColor = UIColor.blueColor()
+                                //wearableService.sendCommand("#PM1234\n\r")
 
+                                
+                                self.labelStatusFuncionario.text = "Funcionário JOBSON está COM capacete!"
+                                
                             }
                         
-//                        }
+                        }
                         
                         
                     } else if val.toInt() == 13 {
                         
-//                        if self.ledLigadoColor == true {
+                        if self.ledLigadoColor == true {
                             self.labelEstado.tintColor = UIColor.redColor()
                             
                             println("DESLIGADO")
@@ -101,10 +106,12 @@ class ViewController: UIViewController {
                                 self.mandaNotification()
                                 self.imageViewStatus.image = UIImage(named: "desligado")
                                 self.contentView.backgroundColor = UIColor.redColor()
+                                
+                                self.labelStatusFuncionario.text = "Funcionário JOBSON está SEM capacete!"
 
-
-//                            self.ledLigadoColor = false
+                                self.ledLigadoColor = false
                             }
+                        }
                         
                     }
                     
@@ -239,13 +246,16 @@ class ViewController: UIViewController {
     
     @IBAction func click_Red(sender: AnyObject) {
         limpaTudo()
-        //wearable.wearableService!.sendCommand("#LR0255\n")
+        wearable.wearableService!.sendCommand("#LR0255\n")
+        if let wearableService = wearable.wearableService {
+            wearableService.sendCommand("#PM1234\n\r")
+        }
     }
     
     @IBAction func click_Blue(sender: AnyObject) {
         limpaTudo()
 
-        //wearable.wearableService!.sendCommand(String(format: "#LB0255\n"))
+        wearable.wearableService!.sendCommand(String(format: "#LB0255\n"))
 
         
         
@@ -253,7 +263,7 @@ class ViewController: UIViewController {
     @IBAction func click_Green(sender: AnyObject) {
         limpaTudo()
 
-        //wearable.wearableService!.sendCommand(String(format: "#LG0255\n"))
+        wearable.wearableService!.sendCommand(String(format: "#LG0255\n"))
         
     }
     
@@ -261,6 +271,8 @@ class ViewController: UIViewController {
         if let wearableService = wearable.wearableService {
             wearableService.sendCommand(String(format:"#LR0000\n\r"))
             wearableService.sendCommand(String(format:"#LB0000\n\r"))
+            wearableService.sendCommand(String(format:"#LG0000\n\r"))
+
         }
     }
     
